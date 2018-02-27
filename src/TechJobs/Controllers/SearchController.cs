@@ -26,7 +26,7 @@ namespace TechJobs.Controllers
         /// </summary>
 
         //below necessary this iteration not on List Controller
-        static private List<string> Searches = new List<string>();
+        //static private List<string> Searches = new List<string>();
         //above necessary this iteration not on List Controller
         public IActionResult Index()
         {
