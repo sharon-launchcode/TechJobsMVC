@@ -50,11 +50,39 @@ namespace TechJobs.Controllers
 
 
 
-            if (string.IsNullOrEmpty(searchType))
+
+
+            if (searchType == "skill")
             {
-                searchType = "SEARCHTYPE NEEDED";
+                List<Dictionary<string, string>> jobs = JobData.FindAll();
+                ViewBag.title = "All Jobs";
+                ViewBag.jobs = jobs;
+                return View();
             }
 
+            if (searchType == "employer")
+            {
+                List<Dictionary<string, string>> jobs = JobData.FindAll();
+                ViewBag.title = "All Jobs";
+                ViewBag.jobs = jobs;
+                return View();
+            }
+
+            if (searchType == "location")
+            {
+                List<Dictionary<string, string>> jobs = JobData.FindAll();
+                ViewBag.title = "All Jobs";
+                ViewBag.jobs = jobs;
+                return View();
+            }
+
+            if (searchType == "position type")
+            {
+                List<Dictionary<string, string>> jobs = JobData.FindAll();
+                ViewBag.title = "All Jobs";
+                ViewBag.jobs = jobs;
+                return View();
+            }
             if (searchType == "all")
             {
                 List<Dictionary<string, string>> jobs = JobData.FindAll();
@@ -62,6 +90,13 @@ namespace TechJobs.Controllers
                 ViewBag.jobs = jobs;
                 return View();
             }
+
+            if (string.IsNullOrEmpty(searchType))
+            {
+                searchType = "SEARCHTYPE NEEDED";
+            }
+
+
             if (string.IsNullOrEmpty(searchTerm))
             {
                 searchTerm = "SEARCHTERM NEEDED";
@@ -76,6 +111,7 @@ namespace TechJobs.Controllers
 
 
         public IActionResult Values(string column)
+        //Notice that the Values Action is NOT in the Search Views and is not kicked out
         {
             if (column.Equals("all"))
             {
