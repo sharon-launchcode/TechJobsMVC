@@ -18,6 +18,14 @@ namespace TechJobs.Controllers
 
         public IActionResult Results()
         {
+
+            List<string> cheeses = new List<string>();
+            cheeses.Add("Cheddar");
+            cheeses.Add("Munster");
+            cheeses.Add("Parmesan");
+
+            ViewBag.cheeses = cheeses;
+
             return View();
         }
 
