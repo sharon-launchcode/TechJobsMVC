@@ -60,10 +60,8 @@ namespace TechJobs.Controllers
             }
         }
         /// </summary>
-        /// <param name="searchType"></param>
-        /// <param name="searchTerm"></param>
-        /// <returns></returns>
 
+        
 
         public IActionResult Results(string searchType, string searchTerm)
             //will enable query parameters with these names searchType searchTerm
@@ -85,9 +83,9 @@ namespace TechJobs.Controllers
             //display the data
 
 
-            ViewBag.searches = Searches;
+            //ViewBag.searches = Searches;
 
-            return View();
+            //return View();
         }
 
 
