@@ -7,17 +7,3 @@
 }
 <h1>Results</h1>
 
-@if (ViewBag.searches.Count == 0)
-{
-    <p>No Search Results Yet!</p>
-}
-
-<ul>
-    @foreach (string search in ViewBag.searches)
-    {
-        <li>@search</li>
-    }
-</ul>
-<h1>@ViewBag.Title</h1>
-<h2>View All</h2>
-

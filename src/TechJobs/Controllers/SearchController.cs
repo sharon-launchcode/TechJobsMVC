@@ -54,6 +54,14 @@ namespace TechJobs.Controllers
             {
                 searchType = "SEARCHTYPE NEEDED";
             }
+
+            if (searchType == "all")
+            {
+                List<Dictionary<string, string>> jobs = JobData.FindAll();
+                ViewBag.title = "All Jobs";
+                ViewBag.jobs = jobs;
+                return View();
+            }
             if (string.IsNullOrEmpty(searchTerm))
             {
                 searchTerm = "SEARCHTERM NEEDED";
