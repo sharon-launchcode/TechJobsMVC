@@ -47,6 +47,9 @@ namespace TechJobs.Controllers
             //pass data to the view
 
 
+
+
+
             if (string.IsNullOrEmpty(searchType))
             {
                 searchType = "SEARCHTYPE NEEDED";
@@ -60,6 +63,9 @@ namespace TechJobs.Controllers
         }
 
         /// <summary>
+        /// 
+
+
 
         public IActionResult Values(string column)
         {
@@ -68,7 +74,7 @@ namespace TechJobs.Controllers
                 List<Dictionary<string, string>> jobs = JobData.FindAll();
                 ViewBag.title = "All Jobs";
                 ViewBag.jobs = jobs;
-                return View("Jobs");
+                return View("Results");
             }
             else
             {
