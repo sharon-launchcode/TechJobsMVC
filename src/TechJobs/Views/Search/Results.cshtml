@@ -6,10 +6,11 @@
 
 }
 <h1>Results</h1>
+<p><a asp-controller="Search" asp-action="List">Search Controller List Action</a></p>
 
 <ul>
-    @foreach (string cheese in ViewBag.cheeses)
+    @foreach (string search in ViewBag.searches)
     {
-    <li>@cheese</li>
+    <li>@search</li>
     }
 </ul>

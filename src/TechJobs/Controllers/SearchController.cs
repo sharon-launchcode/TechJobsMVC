@@ -6,6 +6,7 @@ namespace TechJobs.Controllers
 {
     public class SearchController : Controller
     {
+        static private List<string> Searches = new List<string>();
         public IActionResult Index()
         {
             ViewBag.columns = ListController.columnChoices;
@@ -16,15 +17,13 @@ namespace TechJobs.Controllers
         // TODO #1 - Create a Results action method to process 
         // search request and display results
 
-        public IActionResult Results()
+        public IActionResult Results(string searchType, string searchTerm)
         {
+            //pass data to the view
+            //display the data
 
-            List<string> cheeses = new List<string>();
-            cheeses.Add("Cheddar");
-            cheeses.Add("Munster");
-            cheeses.Add("Parmesan");
 
-            ViewBag.cheeses = cheeses;
+            ViewBag.searches = Searches;
 
             return View();
         }
