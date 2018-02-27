@@ -43,9 +43,21 @@ namespace TechJobs.Controllers
         // search request and display results
 
         public IActionResult Results(string searchType, string searchTerm)
+            //will enable query parameters with these names searchType searchTerm
         {
             //pass data to the view
 
+
+            if (string.IsNullOrEmpty(searchType))
+            {
+                searchType = "SEARCHTYPE NEEDED";
+            }
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                searchTerm = "SEARCHTERM NEEDED";
+            }
+            return Content(string.Format("searchType is {0}", searchType,
+                "searchTerm is {1}", searchTerm), "text/html");
            // Searches.Contains(searchType, searchTerm);
 
             //display the data
