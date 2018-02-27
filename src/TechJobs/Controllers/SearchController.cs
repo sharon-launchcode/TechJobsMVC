@@ -56,8 +56,7 @@ namespace TechJobs.Controllers
             {
                 searchTerm = "SEARCHTERM NEEDED";
             }
-            return Content(string.Format("searchType is {0}", searchType,
-                "searchTerm is {1}", searchTerm), "text/html");
+            return Content(string.Format("searchType is {0} and searchTerm is {1}", searchType, searchTerm), "text/html");
            // Searches.Contains(searchType, searchTerm);
 
             //display the data
