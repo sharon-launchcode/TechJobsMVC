@@ -47,38 +47,7 @@ namespace TechJobs.Controllers
             //pass data to the view
 
 
-            if (searchType == "skill")
-            {
-                List<Dictionary<string, string>> jobs = JobData.FindAll();
-                ViewBag.title = "All Jobs";
-                ViewBag.jobs = jobs;
-                return View();
-            }
 
-            if (searchType == "employer")
-            {
-                List<Dictionary<string, string>> jobs = JobData.FindAll();
-
-                ViewBag.title = "All Jobs";
-                ViewBag.jobs = jobs;
-                return View();
-            }
-
-            if (searchType == "location")
-            {
-                List<Dictionary<string, string>> jobs = JobData.FindAll();
-                ViewBag.title = "All Jobs";
-                ViewBag.jobs = jobs;
-                return View();
-            }
-
-            if (searchType == "position type")
-            {
-                List<Dictionary<string, string>> jobs = JobData.FindAll();
-                ViewBag.title = "All Jobs";
-                ViewBag.jobs = jobs;
-                return View();
-            }
             if (searchType == "all")
             {
                 ViewBag.Jobs = JobData.FindByValue(searchTerm);
@@ -86,6 +55,10 @@ namespace TechJobs.Controllers
                 ViewBag.title = "All Jobs";
                 //ViewBag.jobs = jobs;
                 return View();
+            }
+            else
+            {
+                ViewBag.Jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
             }
 
             if (string.IsNullOrEmpty(searchType))
