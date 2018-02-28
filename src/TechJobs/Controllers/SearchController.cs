@@ -14,15 +14,7 @@ namespace TechJobs.Controllers
 
         // This is a "static constructor" which can be used
         // to initialize static members of a class
-        static SearchController()
-        {
-
-            columnChoices.Add("core competency", "Skill");
-            columnChoices.Add("employer", "Employer");
-            columnChoices.Add("location", "Location");
-            columnChoices.Add("position type", "Position Type");
-            columnChoices.Add("all", "All");
-        }
+ 
         /// </summary>
 
         public IActionResult Index()
