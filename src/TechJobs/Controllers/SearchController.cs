@@ -45,41 +45,18 @@ namespace TechJobs.Controllers
 
                 ViewBag.Jobs = JobData.FindByValue(searchTerm);
                 ViewBag.title = "All Jobs";
-                return View();
+                //return View();
             }
             else
             {
                 ViewBag.Jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
-                return View();
+                //return View();
             }
 
+            return View();
  
         }
 
-        /// <summary>
-        /// 
 
-
-
-        public IActionResult Values(string column)
-        //Notice that the Values Action is NOT in the Search Views and is not kicked out
-        {
-            if (column.Equals("all"))
-            {
-                List<Dictionary<string, string>> jobs = JobData.FindAll();
-                ViewBag.title = "All Jobs";
-                ViewBag.jobs = jobs;
-                return View("Results");
-            }
-            else
-            {
-                List<string> items = JobData.FindAll(column);
-                ViewBag.title = "All " + columnChoices[column] + " Values";
-                ViewBag.column = column;
-                ViewBag.items = items;
-                return View();
-            }
-        }
-        /// </summary>
     }
 }
