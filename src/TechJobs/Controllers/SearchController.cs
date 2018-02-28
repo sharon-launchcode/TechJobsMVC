@@ -27,8 +27,8 @@ namespace TechJobs.Controllers
 
         public IActionResult Index()
         {
-            // ViewBag.columns = ListController.columnChoices;
-            ViewBag.columns = SearchController.columnChoices;
+             ViewBag.columns = ListController.columnChoices;
+           // ViewBag.columns = SearchController.columnChoices;
            // ViewBag.columns = columnChoices;
             ViewBag.title = "Search";
             return View();
@@ -46,7 +46,7 @@ namespace TechJobs.Controllers
         {
             //pass data to the view
 
-
+            ViewBag.columns = ListController.columnChoices;
 
             if (searchType == "all")
             {
