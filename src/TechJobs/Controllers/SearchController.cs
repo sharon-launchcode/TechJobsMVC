@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TechJobs.Models;
@@ -45,18 +46,25 @@ namespace TechJobs.Controllers
 
                 ViewBag.Jobs = JobData.FindByValue(searchTerm);
                 ViewBag.title = "All Jobs";
-                //return View();
+                return View();
             }
             else
             {
                 ViewBag.Jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
-                //return View();
+                return View();
             }
 
-            return View();
+            //return View();
  
         }
 
+        public IActionResult Jobs(string column, string value)
+        {
+            List<Dictionary<String, System.String>> jobs = JobData.FindByColumnAndValue(column, value);
+            ViewBag.title = "Jobs with " + columnChoices[column] + ": " + value;
+            ViewBag.jobs = jobs;
 
+            return View();
+        }
     }
 }
