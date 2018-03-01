@@ -68,8 +68,7 @@
 
     {
 
-        <table>
-            <!-- apparently Bootstrap syling taks over no alternate line styling needed-->
+        <table class="job-listing">
 
 
             @foreach (KeyValuePair<string, string> job in jobs)
@@ -82,7 +81,7 @@
 
                     <td>@job.Value</td>
 
-                </tr>
+                </tr><br />
 
             }
 
