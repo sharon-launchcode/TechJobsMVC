@@ -48,7 +48,7 @@ namespace TechJobs.Controllers
             else
             {
                 ViewBag.Jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
-                return View();
+                return View("~/Views/Search/Index.cshtml");
             }
 
             //return View();
