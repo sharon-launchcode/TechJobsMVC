@@ -20,7 +20,7 @@ namespace TechJobs.Controllers
 
         public IActionResult Index()
         {
-             ViewBag.columns = ListController.columnChoices;
+            ViewBag.columns = ListController.columnChoices;
            // ViewBag.columns = SearchController.columnChoices;
            // ViewBag.columns = columnChoices;
             ViewBag.title = "Search";
@@ -29,9 +29,6 @@ namespace TechJobs.Controllers
 
         // TODO #1 - Create a Results action method to process 
         // search request and display results
-
-
-
         
 
         public IActionResult Results(string searchType, string searchTerm)
@@ -41,12 +38,12 @@ namespace TechJobs.Controllers
 
             ViewBag.columns = ListController.columnChoices;
 
-            if (searchType == "all")
+            if (searchType.Equals ("all"))
             {
 
                 ViewBag.Jobs = JobData.FindByValue(searchTerm);
                 ViewBag.title = "All Jobs";
-                return View();
+                return View("~/Views/Search/Index.cshtml");
             }
             else
             {
@@ -57,7 +54,24 @@ namespace TechJobs.Controllers
             //return View();
  
         }
-
+        public IActionResult Values(string column)
+        {
+            if (column.Equals("all"))
+            {
+                List<Dictionary<string, string>> jobs = JobData.FindAll();
+                ViewBag.title = "All Jobs";
+                ViewBag.jobs = jobs;
+                return View("Jobs");
+            }
+            else
+            {
+                List<string> items = JobData.FindAll(column);
+                ViewBag.title = "All " + columnChoices[column] + " Values";
+                ViewBag.column = column;
+                ViewBag.items = items;
+                return View();
+            }
+        }
         public IActionResult Jobs(string column, string value)
         {
             List<Dictionary<String, System.String>> jobs = JobData.FindByColumnAndValue(column, value);
