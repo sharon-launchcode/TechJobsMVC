@@ -43,16 +43,17 @@ namespace TechJobs.Controllers
 
                 ViewBag.Jobs = JobData.FindByValue(searchTerm);
                 ViewBag.title = "All Jobs";
-                return View("~/Views/Search/Index.cshtml");
+                //return View("~/Views/Search/Index.cshtml");
             }
             else
             {
                 ViewBag.Jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
-                return View("~/Views/Search/Index.cshtml");
+                //return View("~/Views/Search/Index.cshtml");
             }
 
-            //return View();
- 
+            return View("Index");
+            //March 6 2018 incorporating Victor's recommendation
+
         }
 
     }
